@@ -1803,45 +1803,54 @@
                 Расскажите, где сейчас теряется время. Мы покажем, что можно
                 автоматизировать и с чего начать.
               </p>
-              <form
-                class="contact-form"
-                action="mailto:erik03132@gmail.com"
-                method="post"
-                enctype="text/plain"
-              >
-                <label>
-                  Имя
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Как к вам обращаться"
-                    autocomplete="name"
-                    required
-                  />
+              <form id="contactForm" class="contact-form" action="/api/submit" method="POST" novalidate>
+                <label>Имя <input type="text" name="name" required placeholder="Ваше имя"></label>
+                <label>Компания <input type="text" name="company" placeholder="Название компании"></label>
+                <label>Задача <textarea name="task" required placeholder="Опишите задачу"></textarea></label>
+                <label>Контакт (телефон или email) <input type="text" name="contact" placeholder="+7 или email"></label>
+                <label class="honeypot" style="display:none">Не заполняйте <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                <label class="consent">
+                  <input type="checkbox" name="consent" required> Я согласен на обработку персональных данных согласно <a href="/privacy">политики</a>
                 </label>
-                <label>
-                  Компания
-                  <input
-                    type="text"
-                    name="company"
-                    placeholder="Название компании"
-                    autocomplete="organization"
-                    required
-                  />
-                </label>
-                <label>
-                  Задача
-                  <textarea
-                    name="message"
-                    placeholder="Что хотите улучшить с помощью ИИ?"
-                    required
-                  ></textarea>
-                </label>
-                <button class="button button-dark" type="submit">
-                  Отправить заявку <span class="arrow">↗</span>
-                </button>
+                <button class="button button-dark" type="submit">Отправить заявку <span class="arrow">↗</span></button>
+                <div class="msg ok" id="msgOk">Заявка отправлена. Мы скоро ответим.</div>
+                <div class="msg err" id="msgErr">Ошибка отправки. Попробуйте erik03132@gmail.com.</div>
               </form>
-              <a
+
+              <script>
+              (function() {
+                const form = document.getElementById('contactForm');
+                if (!form) return;
+                form.addEventListener('submit', async function(e) {
+                  e.preventDefault();
+                  document.getElementById('msgOk').style.display = 'none';
+                  document.getElementById('msgErr').style.display = 'none';
+                  const fd = new FormData(form);
+                  const data = Object.fromEntries(fd.entries());
+                  if (data.website && data.website.trim().length > 0) {
+                    document.getElementById('msgErr').textContent = 'Ошибка защиты. Попробуйте позже.';
+                    document.getElementById('msgErr').style.display = 'block';
+                    return;
+                  }
+                  data.consent = data.consent === 'on' ? true : false;
+                  try {
+                    const r = await fetch(form.action, {
+                      method: 'POST',
+                      headers: {'Content-Type': 'application/json'},
+                      body: JSON.stringify(data)
+                    });
+                    if (r.ok) {
+                      document.getElementById('msgOk').style.display = 'block';
+                      form.reset();
+                    } else throw new Error();
+                  } catch {
+                    document.getElementById('msgErr').textContent = 'Ошибка отправки. Попробуйте erik03132@gmail.com.';
+                    document.getElementById('msgErr').style.display = 'block';
+                  }
+                });
+              })();
+              </script>
+                            <a
                 class="button telegram-cta"
                 href="https://t.me/erik03132?text=Здравствуйте%21%20Хочу%20обсудить%20внедрение%20ИИ%20в%20бизнес."
                 target="_blank"
@@ -1849,12 +1858,8 @@
               >
                 Написать в Telegram <span class="arrow">↗</span>
               </a>
-              <a class="email-link" href="mailto:erik03132@gmail.com">
-                erik03132@gmail.com <span>↗</span>
-              </a>
-              <a class="email-link phone-link" href="tel:+74959234644">
-                +7 (495) 923-46-44 <span>↗</span>
-              </a>
+              <span class="email-link">erik03132@gmail.com</span>
+              
               <a
                 class="email-link telegram-link"
                 href="https://t.me/erik03132"
