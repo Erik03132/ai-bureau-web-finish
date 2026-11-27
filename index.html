@@ -171,7 +171,33 @@
 <meta name="theme-color" content="#F3EFE7">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-</head>
+<style id="site-shared">
+/* шапка: всегда сверху при скролле */
+header.topbar{position:sticky;top:0;z-index:60;background:rgba(243,239,231,.9);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px)}
+header.topbar::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:rgba(243,239,231,.9);-webkit-backdrop-filter:saturate(160%) blur(14px);backdrop-filter:saturate(160%) blur(14px);z-index:-1;pointer-events:none}
+[id]{scroll-margin-top:104px}
+html,body{overflow-x:hidden}
+/* подвал */
+footer{background:var(--surface,#fff);color:var(--ink,#1f2937);border-top:1px solid var(--line,#DED7CC);padding:56px 0 40px}
+footer .f-grid{display:grid;grid-template-columns:5fr 4fr 3fr;gap:56px 40px}
+footer .f-col{min-width:0}
+footer .f-col--brand{display:flex;flex-direction:column;justify-content:space-between;gap:36px}
+footer .f-brand{display:inline-flex;align-items:center;font-weight:700;letter-spacing:.12em;font-size:14px}
+footer .f-brand span{display:inline-block;width:9px;height:9px;background:var(--signal,#9e2a2b);margin-right:10px}
+footer .f-tag{margin-top:16px;color:var(--ink-soft,#4A4640);font-size:14px;max-width:32ch}
+footer .f-copy{font:500 11px/1.5 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#6E675F)}
+footer .f-h{display:block;font:500 11px/1.2 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--signal,#9e2a2b);margin-bottom:14px}
+footer .f-list{display:flex;flex-direction:column;gap:9px}
+footer .f-list a{font-size:14px;color:var(--ink-soft,#4A4640)}
+footer .f-list a:hover,footer .f-accent:hover{color:var(--signal,#9e2a2b)}
+footer .f-accent{color:var(--signal,#9e2a2b);font-size:14px}
+footer .f-sub{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+footer .f-sub a{font-size:13px;color:var(--muted,#6E675F);padding-left:12px;border-left:1px solid var(--line,#DED7CC)}
+footer .f-group{margin-top:28px}
+footer .f-note{display:block;font-size:14px;line-height:1.5;color:var(--ink-soft,#4A4640)}
+@media(max-width:900px){footer .f-grid{grid-template-columns:1fr 1fr}footer .f-col--brand{grid-column:1/-1;gap:24px}}
+@media(max-width:640px){footer{padding:40px 0 32px}footer .f-grid{grid-template-columns:1fr;gap:32px}}
+</style></head>
 <body>
   <a class="skip" href="#main">Перейти к содержимому</a>
   <header class="topbar wrap">
@@ -329,11 +355,9 @@
     </section>
   </main>
   <footer>
-    <div class="wrap footer-row">
-      <span>AI BUREAU · Внедряем искусственный интеллект. Освобождаем время.</span>
-      <span>© 2026 · <a href="/privacy.html" style="text-decoration: underline; color: inherit;">Политика обработки данных</a> · <a href="/offer.html" style="text-decoration: underline; color: inherit;">Договор-оферта</a></span>
-    </div>
-  </footer>
+<div class="wrap">
+<div class="f-grid"><div class="f-col f-col--brand"><div><a class="f-brand" href="/"><span aria-hidden="true"></span>AI BUREAU</a><p class="f-tag">Внедряем искусственный интеллект. Освобождаем время.</p></div><span class="f-copy">AI-BUREAU · 2026 · Все права защищены</span></div><div class="f-col"><span class="f-h">[01 / Услуги]</span><nav class="f-list" aria-label="Услуги"><a href="/services/ai-agents/">Автономные ИИ-сотрудники</a><a href="/services/rag/">Поиск и ответы по данным</a><a href="/services/document-automation/">OCR + RAG для договоров</a><a href="/services/chatbots/">Боты от заявки до продажи</a><a href="/services/private-models/">Локальные модели в контуре</a><a href="/services/ai-audit/">Первичный аудит и карта ROI</a></nav><div class="f-group"><a class="f-accent" href="/blog/">Блог: разборы и инструкции →</a><div class="f-sub"><a href="/blog/#post-10">Сколько стоит ИИ-проект в 2026</a><a href="/blog/#post-9">Поиск по документам: ответ со ссылкой</a><a href="/blog/#post-8">Агент или бот: кто квалифицирует заявку</a></div></div></div><div class="f-col"><span class="f-h">[02 / Правовая информация]</span><nav class="f-list" aria-label="Правовая информация"><a href="/privacy.html">Политика конфиденциальности</a><a href="/consent.html">Согласие на обработку персональных данных</a><a href="/offer.html">Договор-оферта</a></nav><div class="f-group"><span class="f-h">[03 / Контакты]</span><div class="f-list"><a href="https://t.me/erik03132" target="_blank" rel="noopener">Telegram: @erik03132</a><a href="mailto:info@ai-traffic-pro.ru">Email: info@ai-traffic-pro.ru</a><a href="tel:+74959234644">Телефон: +7 (495) 923-46-44</a></div></div><div class="f-group"><span class="f-h">[04 / Реквизиты]</span><span class="f-note">ИП Марченко Д. Н.</span><span class="f-note">ИНН 770304789944 · ОГРНИП 326508100653064</span><span class="f-note">Московская область, Раменский муниципальный округ, г. Раменское</span></div><div class="f-group"><a class="f-accent" href="/author/">Автор материалов: Игорь Васин</a></div></div></div></div>
+</footer>
 
 
 
