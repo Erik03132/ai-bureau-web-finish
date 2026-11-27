@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Инвентаризация источников: реестр — AI Bureau</title>
+<meta name="description" content="Реестр источников данных перед RAG: владелец, формат, частота обновления, доступ и качество. Без него поиск отвечает устаревшими фактами.">
+<link rel="canonical" href="https://ai-bureau.online/blog/inventarizaciya-istochnikov/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/inventarizaciya-istochnikov/">
+<meta property="og:title" content="Инвентаризация источников: реестр">
+<meta property="og:description" content="Реестр источников данных перед RAG: владелец, формат, частота обновления, доступ и качество. Без него поиск отвечает устаревшими фактами.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/inventarizaciya-istochnikov/#article",
+"headline": "Инвентаризация источников: реестр",
+"description": "Реестр источников данных перед RAG: владелец, формат, частота обновления, доступ и качество. Без него поиск отвечает устаревшими фактами.",
+"datePublished": "2026-12-10",
+"dateModified": "2026-12-10",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/inventarizaciya-istochnikov/"
+},
+"url": "https://ai-bureau.online/blog/inventarizaciya-istochnikov/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/inventarizaciya-istochnikov/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Можно ли подключить всё сразу?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Можно, но не нужно. Первая версия — 3–5 источников с подтверждённой актуальностью. Расширение идёт после проверки метрик."
+}
+},
+{
+"@type": "Question",
+"name": "Что делать с перепиской?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Хранить как отдельный тип источника с явной пометкой «не регламент». Цитировать письма как официальный ответ нельзя."
+}
+},
+{
+"@type": "Question",
+"name": "Кто должен вести реестр?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Тот, кто отвечает за внедрение, вместе с владельцами источников. Это не задача подрядчика."
+}
+},
+{
+"@type": "Question",
+"name": "Нужен ли отдельный сервер для индексации?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Для объёма до нескольких тысяч страниц хватает одного процесса. Дальше — по нагрузке, а не заранее."
+}
+},
+{
+"@type": "Question",
+"name": "Как быть с документами под грифом?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Изолированный контур или исключение из базы. Компромисс «частично замажем» не работает."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Инвентаризация источников</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[07 / ДАННЫЕ]</span><h1>Инвентаризация источников: реестр</h1><p class="lede">Поиск по документам ломается не на модели, а на источнике, о котором забыли. Кто-то обновил регламент в Confluence, а PDF на сайте остался прошлогодним — и система уверенно цитирует устаревшее. Реестр источников стоит две недели и снимает половину проблем.</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 10 декабря 2026 · 8 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Что входит в реестр</h2>
+<table><thead><tr><th>Поле</th><th>Зачем</th><th>Пример</th></tr></thead><tbody><tr><td>Название и ссылка</td><td>Где лежит источник</td><td>Регламент оплаты, Confluence, раздел 4</td></tr><tr><td>Владелец</td><td>Кто отвечает за актуальность</td><td>Финансовый отдел, Иванов</td></tr><tr><td>Формат</td><td>Как извлекать текст</td><td>PDF с текстовым слоем</td></tr><tr><td>Частота обновления</td><td>Как часто переиндексировать</td><td>Раз в месяц</td></tr><tr><td>Права доступа</td><td>Кто может видеть ответы</td><td>Только сотрудники</td></tr><tr><td>Качество</td><td>Есть ли OCR, таблицы, сканы</td><td>Сканы, нужен OCR</td></tr></tbody></table>
+<p>Шесть полей достаточно, чтобы не спорить на четвёртой неделе, почему ответ неверный. Если владельца нет, источник считается необязательным и в пилот не входит.</p>
+<h2>Порядок работы</h2>
+<ol><li>Собираем список всего, куда сотрудники ходят за ответами: файлы, вики, почта, чаты.</li><li>Отмечаем, что реально используется: спрашиваем у трёх-пяти человек, а не у руководителя.</li><li>Для каждого источника находим владельца и подтверждение актуальности.</li><li>Проверяем извлечение текста: PDF, сканы, таблицы, вложенные файлы.</li><li>Фиксируем частоту обновления и способ оповещения об изменениях.</li></ol>
+<p class="callout">Источник без владельца — это не источник, а археология. Мы не подключаем такие документы в первую версию.</p>
+<h2>Что обычно обнаруживается</h2>
+<ul><li>Три версии одного регламента с разными датами и одинаковым названием.</li><li>Половина базы — сканы, которые не индексируются без OCR.</li><li>Документы с ограничением доступа лежат в общей папке.</li><li>Ключевые ответы живут в переписке, а не в документах.</li><li>Часть документов устарела, но на них ссылаются в регламентах.</li></ul>
+<p>Последний пункт самый дорогой. Система, которая цитирует отменённый приказ, хуже поиска по папкам: она добавляет уверенности там, где её быть не должно.</p>
+<h2>Как поддерживать реестр</h2>
+<p>Реестр — не документ на полке. Минимальный режим: ответственный за источник подтверждает актуальность раз в квартал, а система переиндексирует изменённые файлы автоматически. Если файл не менялся год, это повод проверить, а не повод радоваться.</p>
+<table><thead><tr><th>Метрика</th><th>Ориентир</th></tr></thead><tbody><tr><td>Доля источников с владельцем</td><td>100% для пилота</td></tr><tr><td>Доля документов с текстовым слоем</td><td>От 70%</td></tr><tr><td>Документов старше двух лет в базе</td><td>Меньше 15%</td></tr><tr><td>Источников без даты обновления</td><td>Ноль</td></tr></tbody></table>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Можно ли подключить всё сразу?</dt><dd>Можно, но не нужно. Первая версия — 3–5 источников с подтверждённой актуальностью. Расширение идёт после проверки метрик.</dd><dt>Что делать с перепиской?</dt><dd>Хранить как отдельный тип источника с явной пометкой «не регламент». Цитировать письма как официальный ответ нельзя.</dd><dt>Кто должен вести реестр?</dt><dd>Тот, кто отвечает за внедрение, вместе с владельцами источников. Это не задача подрядчика.</dd><dt>Нужен ли отдельный сервер для индексации?</dt><dd>Для объёма до нескольких тысяч страниц хватает одного процесса. Дальше — по нагрузке, а не заранее.</dd><dt>Как быть с документами под грифом?</dt><dd>Изолированный контур или исключение из базы. Компромисс «частично замажем» не работает.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/rag/">Поиск и ответы по данным</a> · <a href="/services/private-models/">Локальные модели в контуре</a> · <a href="/blog/otvet-so-ssylkoy/">Ответ со ссылкой: доля валидных фрагментов</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>Confluence REST API — https://developer.atlassian.com/cloud/confluence/rest/</li><li>Qdrant, документация — https://qdrant.tech/documentation/</li><li>Tesseract OCR — https://tesseract-ocr.github.io/</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>

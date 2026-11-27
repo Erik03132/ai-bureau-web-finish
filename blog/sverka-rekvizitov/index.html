@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Сверка реквизитов: ручная проверка — AI Bureau</title>
+<meta name="description" content="Какие проверки реквизитов можно автоматизировать полностью, какие требуют человека и как считать долю ошибок.">
+<link rel="canonical" href="https://ai-bureau.online/blog/sverka-rekvizitov/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/sverka-rekvizitov/">
+<meta property="og:title" content="Сверка реквизитов: ручная проверка">
+<meta property="og:description" content="Какие проверки реквизитов можно автоматизировать полностью, какие требуют человека и как считать долю ошибок.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/sverka-rekvizitov/#article",
+"headline": "Сверка реквизитов: ручная проверка",
+"description": "Какие проверки реквизитов можно автоматизировать полностью, какие требуют человека и как считать долю ошибок.",
+"datePublished": "2026-12-16",
+"dateModified": "2026-12-16",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/sverka-rekvizitov/"
+},
+"url": "https://ai-bureau.online/blog/sverka-rekvizitov/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/sverka-rekvizitov/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Нужна ли LLM для сверки?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Для кодовых проверок — нет. Модель полезна на этапе извлечения из нестандартных документов и на объяснении расхождения человеческим языком."
+}
+},
+{
+"@type": "Question",
+"name": "Что делать с рукописными документами?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Распознавание работает частично. Такие документы сразу уходят на ручную проверку, без попыток угадать."
+}
+},
+{
+"@type": "Question",
+"name": "Сколько занимает пилот?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "3–5 недель: неделя на извлечение, неделя на правила, две недели на прогон реальных документов."
+}
+},
+{
+"@type": "Question",
+"name": "Можно ли подключить 1С?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Да, через API или выгрузку. Для пилота достаточно ежедневной выгрузки справочника контрагентов."
+}
+},
+{
+"@type": "Question",
+"name": "Кто отвечает за пропущенную ошибку?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Процесс остаётся под ответственностью компании. Мы отвечаем за работу проверок и полноту журнала, а не за решения по платежам."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Сверка реквизитов</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[05 / ДОКУМЕНТЫ]</span><h1>Сверка реквизитов: ручная проверка</h1><p class="lede">Сверка реквизитов кажется простой задачей: сравнить два поля. На практике половина времени уходит на документы, где реквизиты написаны тремя способами, а ИНН отличается одной цифрой. Автоматизация здесь работает, но не целиком.</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 16 декабря 2026 · 7 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Что проверяется кодом</h2>
+<table><thead><tr><th>Проверка</th><th>Автоматически</th><th>Что ловит</th></tr></thead><tbody><tr><td>Контрольная сумма ИНН</td><td>Да</td><td>Опечатку в одной цифре</td></tr><tr><td>Контрольная сумма ОГРН</td><td>Да</td><td>Битый номер записи</td></tr><tr><td>Соответствие КПП и ИНН</td><td>Да</td><td>КПП от другой организации</td></tr><tr><td>Формат БИК и расчётного счёта</td><td>Да</td><td>Перепутанные счета</td></tr><tr><td>Сверка с выпиской ЕГРЮЛ</td><td>Да</td><td>Смену названия или адреса</td></tr></tbody></table>
+<p>Пять проверок закрывают большинство механических ошибок. Они не требуют модели, работают за миллисекунды и не ошибаются. Начинать нужно с них, а не с распознавания.</p>
+<h2>Что требует человека</h2>
+<ul><li>Расхождения в названии: сокращение, кавычки, организационная форма.</li><li>Адрес в свободной форме без индекса.</li><li>Подпись и полномочия: доверенность может быть просрочена.</li><li>Ссылка на договор, который меняет условия оплаты.</li></ul>
+<p class="callout">Модель хорошо находит кандидатов на расхождение и плохо решает, критично ли оно. Решение о блокировке платежа остаётся за человеком.</p>
+<h2>Как устроен поток</h2>
+<ol><li>Документ попадает в систему и распознаётся. Таблицы и печати — отдельная ветка.</li><li>Поля извлекаются в структуру: ИНН, КПП, название, адрес, счёт, сумма.</li><li>Кодовые проверки отсекают явный брак.</li><li>Сравнение с карточкой контрагента в учётной системе.</li><li>Расхождения делятся на два списка: исправить автоматически и показать человеку.</li></ol>
+<p>Порог для «показать человеку» настраивается. Мы начинаем с низкого порога: лучше лишняя проверка на первых двухстах документах, чем пропущенная ошибка в платеже.</p>
+<table><thead><tr><th>Метрика</th><th>До</th><th>После пилота</th></tr></thead><tbody><tr><td>Доля документов без ручной правки</td><td>—</td><td>60–75%</td></tr><tr><td>Время на один документ</td><td>4–6 минут</td><td>1–2 минуты</td></tr><tr><td>Пропущенные ошибки в реквизитах</td><td>1–2 на 100</td><td>0 на первых 500</td></tr><tr><td>Доля документов, ушедших на доработку</td><td>—</td><td>Меньше 15%</td></tr></tbody></table>
+<h2>Где чаще всего ломается</h2>
+<p>Сканы низкого качества и фотографии с телефона. Второй источник — несколько версий справочника контрагентов: если в CRM и в 1С разные карточки одного поставщика, автоматика будет спорить сама с собой. Перед пилотом справочники нужно свести.</p>
+<p>Третий — отсутствие журнала. Если непонятно, кто и почему изменил реквизит, разбор инцидента превращается в поиск виноватого. Мы пишем в журнал исходное значение, новое, источник и автора.</p>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Нужна ли LLM для сверки?</dt><dd>Для кодовых проверок — нет. Модель полезна на этапе извлечения из нестандартных документов и на объяснении расхождения человеческим языком.</dd><dt>Что делать с рукописными документами?</dt><dd>Распознавание работает частично. Такие документы сразу уходят на ручную проверку, без попыток угадать.</dd><dt>Сколько занимает пилот?</dt><dd>3–5 недель: неделя на извлечение, неделя на правила, две недели на прогон реальных документов.</dd><dt>Можно ли подключить 1С?</dt><dd>Да, через API или выгрузку. Для пилота достаточно ежедневной выгрузки справочника контрагентов.</dd><dt>Кто отвечает за пропущенную ошибку?</dt><dd>Процесс остаётся под ответственностью компании. Мы отвечаем за работу проверок и полноту журнала, а не за решения по платежам.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/document-automation/">Автоматизация документооборота</a> · <a href="/services/private-models/">Локальные модели в контуре</a> · <a href="/blog/">Все статьи</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>ФНС, проверка контрагента — https://egrul.nalog.ru/</li><li>Алгоритм контрольного числа ИНН — https://www.nalog.gov.ru/rn77/</li><li>1С:Предприятие, документация — https://its.1c.ru/db/v8std</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Поиск по документам: ответ со ссылкой — AI Bureau</title>
+<meta name="description" content="Как устроен поиск, который отвечает по документам и показывает страницу с фактом: гибридный поиск, реранкер, отказ от ответа.">
+<link rel="canonical" href="https://ai-bureau.online/blog/poisk-po-dokumentam/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/poisk-po-dokumentam/">
+<meta property="og:title" content="Поиск по документам: ответ со ссылкой">
+<meta property="og:description" content="Как устроен поиск, который отвечает по документам и показывает страницу с фактом: гибридный поиск, реранкер, отказ от ответа.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/poisk-po-dokumentam/#article",
+"headline": "Поиск по документам: ответ со ссылкой",
+"description": "Как устроен поиск, который отвечает по документам и показывает страницу с фактом: гибридный поиск, реранкер, отказ от ответа.",
+"datePublished": "2026-12-06",
+"dateModified": "2026-12-06",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/poisk-po-dokumentam/"
+},
+"url": "https://ai-bureau.online/blog/poisk-po-dokumentam/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/poisk-po-dokumentam/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Можно ли сделать без модели?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Да, гибридный поиск без генерации уже экономит время: человек получает список фрагментов. Модель нужна, чтобы собрать ответ."
+}
+},
+{
+"@type": "Question",
+"name": "Что с документами, где всё в таблицах?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Таблицы извлекаются отдельно, с сохранением структуры. Если структура потеряна, фрагмент помечается как ненадёжный."
+}
+},
+{
+"@type": "Question",
+"name": "Как часто обновляется индекс?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Изменённые файлы — в течение часа. Полная переиндексация — по расписанию, ночью."
+}
+},
+{
+"@type": "Question",
+"name": "Сколько стоит поддержка?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "От нескольких часов в месяц на небольшую базу. Основные расходы — добавление новых источников, а не работа системы."
+}
+},
+{
+"@type": "Question",
+"name": "Работает ли офлайн?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Да, если модель и индекс развёрнуты в контуре. Тогда обновления ставятся вручную."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Поиск по документам</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[09 / RAG]</span><h1>Поиск по документам: ответ со ссылкой</h1><p class="lede">Сотрудник не хочет читать документ. Он хочет получить ответ и проверить его за десять секунд. Значит, система обязана показать страницу, абзац и дату документа — и уметь сказать «в базе этого нет».</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 6 декабря 2026 · 7 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Из чего состоит поиск</h2>
+<ol><li>Извлечение текста: PDF, Word, сканы через OCR, таблицы отдельной веткой.</li><li>Дробление на фрагменты по смысловым границам с сохранением номера страницы.</li><li>Индекс: BM25 по терминам и вектор по смыслу, оба хранят метаданные.</li><li>Поиск: 50 кандидатов из каждого индекса, объединение через RRF.</li><li>Реранкер на топ-20: оценивает пару «вопрос — фрагмент» и переставляет.</li><li>Порог: если лучший фрагмент ниже порога, система отказывается отвечать.</li></ol>
+<p>Отказ — не сбой, а функция. Без него поиск всегда что-то находит, и половина ответов оказывается близкой по теме, но неверной по факту.</p>
+<h2>Почему гибрид, а не только вектор</h2>
+<table><thead><tr><th>Запрос</th><th>Вектор</th><th>BM25</th></tr></thead><tbody><tr><td>«как оформить возврат»</td><td>Находит синонимы</td><td>Слабее</td></tr><tr><td>«пункт 4.2 договора»</td><td>Путается</td><td>Точное попадание</td></tr><tr><td>«ИНН 770304789944»</td><td>Не находит</td><td>Находит сразу</td></tr><tr><td>«что делать при браке»</td><td>Находит</td><td>Средне</td></tr></tbody></table>
+<p class="callout">Артикулы, номера пунктов и суммы — главная причина, по которой чистый векторный поиск не подходит для документов.</p>
+<h2>Метаданные решают половину</h2>
+<p>Дата документа, срок действия, тип, подразделение. Без них действующий договор проигрывает архивному, а общий регламент — частному письму. Фильтры по метаданным применяются до реранкера, а не после.</p>
+<h2>Что видит пользователь</h2>
+<ul><li>Ответ в 3–5 предложений без воды.</li><li>Ссылка на документ с номером страницы и подсветкой абзаца.</li><li>Дата документа и статус: действует или архив.</li><li>Кнопка «неверно» — она попадает в разбор, а не в пустоту.</li></ul>
+<p>Ответ без ссылки мы не показываем вообще. Даже если модель уверена. Это правило снимает большую часть претензий к качеству: пользователь видит основание и сам решает, доверять ли.</p>
+<h2>Сроки</h2>
+<p>Первый рабочий поиск по одной базе — 3–6 недель. Из них половина времени уходит на извлечение и разметку, а не на модель. Пилот на 500–2000 страниц даёт понятную картину, дальше решается вопрос расширения.</p>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Можно ли сделать без модели?</dt><dd>Да, гибридный поиск без генерации уже экономит время: человек получает список фрагментов. Модель нужна, чтобы собрать ответ.</dd><dt>Что с документами, где всё в таблицах?</dt><dd>Таблицы извлекаются отдельно, с сохранением структуры. Если структура потеряна, фрагмент помечается как ненадёжный.</dd><dt>Как часто обновляется индекс?</dt><dd>Изменённые файлы — в течение часа. Полная переиндексация — по расписанию, ночью.</dd><dt>Сколько стоит поддержка?</dt><dd>От нескольких часов в месяц на небольшую базу. Основные расходы — добавление новых источников, а не работа системы.</dd><dt>Работает ли офлайн?</dt><dd>Да, если модель и индекс развёрнуты в контуре. Тогда обновления ставятся вручную.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/rag/">Поиск и ответы по данным</a> · <a href="/services/private-models/">Локальные модели в контуре</a> · <a href="/blog/otvet-so-ssylkoy/">Ответ со ссылкой: доля валидных фрагментов</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>Qdrant, документация — https://qdrant.tech/documentation/</li><li>Reciprocal Rank Fusion — https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf</li><li>Tesseract OCR — https://tesseract-ocr.github.io/</li><li>Ollama, документация — https://docs.ollama.com/</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>

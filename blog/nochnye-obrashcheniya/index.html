@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ночные обращения: работа до смены — AI Bureau</title>
+<meta name="description" content="Что бот закрывает ночью сам, что обязан отложить до утра и как не потерять заявку между сменами.">
+<link rel="canonical" href="https://ai-bureau.online/blog/nochnye-obrashcheniya/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/nochnye-obrashcheniya/">
+<meta property="og:title" content="Ночные обращения: работа до смены">
+<meta property="og:description" content="Что бот закрывает ночью сам, что обязан отложить до утра и как не потерять заявку между сменами.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/nochnye-obrashcheniya/#article",
+"headline": "Ночные обращения: работа до смены",
+"description": "Что бот закрывает ночью сам, что обязан отложить до утра и как не потерять заявку между сменами.",
+"datePublished": "2026-12-18",
+"dateModified": "2026-12-18",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/nochnye-obrashcheniya/"
+},
+"url": "https://ai-bureau.online/blog/nochnye-obrashcheniya/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/nochnye-obrashcheniya/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Нужен ли бот, если ночью пишут два человека?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Скорее нет. Достаточно автоответа с обещанием ответить утром и формой заявки. Бот окупается от 20–30 обращений в сутки."
+}
+},
+{
+"@type": "Question",
+"name": "Как быть с WhatsApp и Telegram одновременно?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Один сценарий, два канала, общая очередь. Дублировать логику по каналам — источник расхождений."
+}
+},
+{
+"@type": "Question",
+"name": "Что если бот не понял вопрос?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Один переспрос, затем приём заявки с пометкой «требует внимания» и передача в очередь."
+}
+},
+{
+"@type": "Question",
+"name": "Можно ли отвечать по наличию товара?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Да, если есть интеграция с каталогом и правило: при расхождении данных верить складу, а не базе."
+}
+},
+{
+"@type": "Question",
+"name": "Как проверяем качество?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Раз в неделю разбираем 20 случайных ночных диалогов. Ищем не ошибки формулировок, а потерянные заявки."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Ночные обращения</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[04 / ЧАТ-БОТЫ]</span><h1>Ночные обращения: работа до смены</h1><p class="lede">Ночью клиент не ждёт до девяти утра. Он пишет в три канала и уходит к тому, кто ответил. Бот закрывает часть вопросов сразу, но главная его работа — не ответить, а сохранить заявку и контекст до смены.</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 18 декабря 2026 · 6 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Что можно закрыть ночью</h2>
+<ul><li>Статус заказа по номеру — при наличии интеграции с учётной системой.</li><li>Условия работы, график, адрес, способы оплаты.</li><li>Запись на встречу в свободный слот.</li><li>Приём заявки с обязательными полями и подтверждением.</li><li>Ответы по документам: характеристики, наличие, сроки поставки из каталога.</li></ul>
+<p>Всё, что касается денег, скидок, сроков производства и претензий, ночью не решается. Бот фиксирует и передаёт.</p>
+<h2>Что обязано подождать</h2>
+<table><thead><tr><th>Тема</th><th>Ночью</th><th>Утром</th></tr></thead><tbody><tr><td>Скидка и торг</td><td>Принять запрос, не обещать</td><td>Менеджер отвечает до 11:00</td></tr><tr><td>Претензия</td><td>Принять, присвоить номер</td><td>Разбор в первый час смены</td></tr><tr><td>Сложный монтаж</td><td>Собрать вводные</td><td>Инженер отвечает в рабочее время</td></tr><tr><td>Договор</td><td>Прислать шаблон, не править</td><td>Юрист в рабочее время</td></tr></tbody></table>
+<p class="callout">Обещание, данное ночью ботом, утром стоит дороже, чем час простоя. Поэтому список запрещённых тем фиксируется письменно до запуска.</p>
+<h2>Как не потерять заявку</h2>
+<p>Ночная заявка должна попасть в ту же очередь, что и дневная, с меткой времени и канала. Если ночью заявки падают в отдельный чат, их разбирают последними — и первое сообщение клиента теряет смысл.</p>
+<ol><li>Единая очередь с приоритетом по времени поступления.</li><li>Уведомление ответственному в 8:45, а не в момент прихода.</li><li>Ответ клиенту утром — от человека, со ссылкой на его ночное сообщение.</li><li>Если клиент написал в три канала, склеиваем в одну карточку.</li></ol>
+<h2>Метрики</h2>
+<table><thead><tr><th>Метрика</th><th>Ориентир</th></tr></thead><tbody><tr><td>Доля ночных обращений</td><td>10–25% суточного потока</td></tr><tr><td>Доля закрытых без человека</td><td>40–60%</td></tr><tr><td>Время до первого ответа ночью</td><td>Меньше 30 секунд</td></tr><tr><td>Потерянные ночные заявки</td><td>Ноль; проверяется сверкой очередей</td></tr><tr><td>Просроченный утренний ответ</td><td>Меньше 10% ночных заявок</td></tr></tbody></table>
+<p>Считаем не «сколько сэкономили», а сколько ночных заявок дошло до сделки. Экономия на ночной смене редко превышает стоимость одной потерянной сделки в месяц.</p>
+<h2>Тон и границы</h2>
+<p>Ночью человек тревожнее и короче. Бот не шутит, не уговаривает и не спрашивает «чем ещё помочь». Три предложения, конкретика, номер заявки. Всё остальное — утром.</p>
+<p>Отдельно проверяем, что бот не создаёт ощущение живого сотрудника. Если клиент спрашивает «вы человек?», ответ должен быть прямым. Это вопрос доверия, а не юридической формальности.</p>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Нужен ли бот, если ночью пишут два человека?</dt><dd>Скорее нет. Достаточно автоответа с обещанием ответить утром и формой заявки. Бот окупается от 20–30 обращений в сутки.</dd><dt>Как быть с WhatsApp и Telegram одновременно?</dt><dd>Один сценарий, два канала, общая очередь. Дублировать логику по каналам — источник расхождений.</dd><dt>Что если бот не понял вопрос?</dt><dd>Один переспрос, затем приём заявки с пометкой «требует внимания» и передача в очередь.</dd><dt>Можно ли отвечать по наличию товара?</dt><dd>Да, если есть интеграция с каталогом и правило: при расхождении данных верить складу, а не базе.</dd><dt>Как проверяем качество?</dt><dd>Раз в неделю разбираем 20 случайных ночных диалогов. Ищем не ошибки формулировок, а потерянные заявки.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/chatbots/">Чат-боты и поддержка</a> · <a href="/services/ai-agents/">AI-агенты для продаж</a> · <a href="/blog/">Все статьи</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>Telegram Bot API — https://core.telegram.org/bots/api</li><li>WhatsApp Business Platform — https://developers.facebook.com/docs/whatsapp</li><li>Bitrix24 Открытые линии — https://apidocs.bitrix24.ru/</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>

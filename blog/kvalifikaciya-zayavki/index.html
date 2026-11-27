@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Квалификация заявки: передача человеку — AI Bureau</title>
+<meta name="description" content="Что агент решает сам, что передаёт менеджеру и какие поля заполняет до передачи. Правила эскалации и метрики качества.">
+<link rel="canonical" href="https://ai-bureau.online/blog/kvalifikaciya-zayavki/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/kvalifikaciya-zayavki/">
+<meta property="og:title" content="Квалификация заявки: передача человеку">
+<meta property="og:description" content="Что агент решает сам, что передаёт менеджеру и какие поля заполняет до передачи. Правила эскалации и метрики качества.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/kvalifikaciya-zayavki/#article",
+"headline": "Квалификация заявки: передача человеку",
+"description": "Что агент решает сам, что передаёт менеджеру и какие поля заполняет до передачи. Правила эскалации и метрики качества.",
+"datePublished": "2026-12-22",
+"dateModified": "2026-12-22",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/kvalifikaciya-zayavki/"
+},
+"url": "https://ai-bureau.online/blog/kvalifikaciya-zayavki/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/kvalifikaciya-zayavki/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Нужна ли интеграция с CRM?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Для квалификации — да. Без записи в систему агент остаётся чатом, а менеджер всё равно копирует данные руками."
+}
+},
+{
+"@type": "Question",
+"name": "Сколько занимает запуск?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "2–4 недели на один канал и один процесс. Первая неделя — разбор диалогов, вторая — сценарий и интеграция, дальше тест на реальном потоке."
+}
+},
+{
+"@type": "Question",
+"name": "Что с персональными данными?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Контур определяется до запуска: где хранятся диалоги, кто имеет доступ, сколько храним. Согласие на обработку собирается в интерфейсе, а не задним числом."
+}
+},
+{
+"@type": "Question",
+"name": "Можно ли без LLM?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Для жёсткого сценария с пятью вопросами хватит формы. Модель нужна там, где клиент пишет свободным текстом и отвечает не по порядку."
+}
+},
+{
+"@type": "Question",
+"name": "Кто отвечает за ошибку агента?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Компания. Поэтому до запуска фиксируем, какие действия агент делать не может, и оставляем журнал и откат."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Квалификация заявки</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[02 / AI-АГЕНТЫ]</span><h1>Квалификация заявки: передача человеку</h1><p class="lede">Квалификация — единственный этап, где агент экономит время менеджера, а не просто отвечает клиенту. Работает это только при двух условиях: понятные критерии и явные правила передачи человеку.</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 22 декабря 2026 · 8 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Что агент делает сам</h2>
+<ul><li>Задаёт обязательные вопросы: задача, бюджет, срок, кто принимает решение.</li><li>Проверяет, есть ли клиент в CRM и не дубль ли это.</li><li>Заполняет карточку заявки и ставит источник.</li><li>Отвечает на вопросы о процессе работы, сроках и формате.</li><li>Назначает встречу в свободный слот, если правило это разрешает.</li></ul>
+<p>Всё остальное — передача. Агент не торгуется, не обещает скидку и не подтверждает сроки, которых нет в календаре производства.</p>
+<h2>Карточка заявки</h2>
+<p>Поля фиксируются заранее, иначе агент придумает свои. Минимальный набор: контакт, компания, задача своими словами, бюджетный диапазон, срок, роль обратившегося, источник, ссылка на диалог.</p>
+<table><thead><tr><th>Поле</th><th>Обязательное</th><th>Если клиент не ответил</th></tr></thead><tbody><tr><td>Контакт</td><td>Да</td><td>Заявка не создаётся, диалог остаётся в очереди</td></tr><tr><td>Задача</td><td>Да</td><td>Агент переспрашивает один раз, потом передаёт</td></tr><tr><td>Бюджет</td><td>Нет</td><td>Ставится «не указан», менеджер уточняет сам</td></tr><tr><td>Срок</td><td>Нет</td><td>Ставится «не указан»</td></tr><tr><td>Роль</td><td>Нет</td><td>Определяется по формулировке, помечается как догадка</td></tr></tbody></table>
+<p class="callout">Пустое поле честнее выдуманного. Агент, который «примерно понял» бюджет, ломает приоритизацию очереди.</p>
+<h2>Правила эскалации</h2>
+<p>Передача человеку должна срабатывать по событию, а не по настроению модели. Мы используем пять триггеров.</p>
+<ol><li>Клиент прямо просит человека — передаём сразу, без попытки удержать.</li><li>Вопрос про цену ниже прайса, скидку или договор — только менеджер.</li><li>Три непонимания подряд в одном диалоге.</li><li>Клиент — действующий клиент с открытой сделкой: контекст важнее скорости.</li><li>Тема вне сценария: юридическая, кадровая, претензия.</li></ol>
+<h2>Метрики, которые видно в первый месяц</h2>
+<table><thead><tr><th>Метрика</th><th>Как считаем</th><th>Ориентир</th></tr></thead><tbody><tr><td>Доля заявок с полным набором полей</td><td>Заполнено / всего</td><td>70% и выше</td></tr><tr><td>Время до первого ответа</td><td>Медиана по диалогам</td><td>Меньше 1 минуты</td></tr><tr><td>Доля передач человеку</td><td>Передачи / диалоги</td><td>15–35% в первый месяц</td></tr><tr><td>Доля откатов действий</td><td>Отменённые записи / все</td><td>Меньше 3%</td></tr><tr><td>Возвраты «не тот отдел»</td><td>Переназначения / заявки</td><td>Меньше 10%</td></tr></tbody></table>
+<p>Если передач меньше 10%, агент, скорее всего, уверенно отвечает там, где не должен. Если больше 50% — сценарий слишком узкий, менеджеры носят ту же нагрузку плюс разбор.</p>
+<h2>Где чаще всего ломается</h2>
+<p>Первый источник ошибок — грязная CRM. Дубли контактов и пустые компании превращают агента в быстрый копировщик мусора. Второй — отсутствие отката: если действие нельзя отменить одной кнопкой, менеджер перестаёт доверять агенту после первого инцидента.</p>
+<p>Третий — журнал без содержания. Запись «агент передал заявку» бесполезна. Нужны вход, решение, причина и результат: тогда разбор идёт по конкретному диалогу, а не по общему впечатлению.</p>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Нужна ли интеграция с CRM?</dt><dd>Для квалификации — да. Без записи в систему агент остаётся чатом, а менеджер всё равно копирует данные руками.</dd><dt>Сколько занимает запуск?</dt><dd>2–4 недели на один канал и один процесс. Первая неделя — разбор диалогов, вторая — сценарий и интеграция, дальше тест на реальном потоке.</dd><dt>Что с персональными данными?</dt><dd>Контур определяется до запуска: где хранятся диалоги, кто имеет доступ, сколько храним. Согласие на обработку собирается в интерфейсе, а не задним числом.</dd><dt>Можно ли без LLM?</dt><dd>Для жёсткого сценария с пятью вопросами хватит формы. Модель нужна там, где клиент пишет свободным текстом и отвечает не по порядку.</dd><dt>Кто отвечает за ошибку агента?</dt><dd>Компания. Поэтому до запуска фиксируем, какие действия агент делать не может, и оставляем журнал и откат.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/ai-agents/">AI-агенты для продаж</a> · <a href="/services/chatbots/">Чат-боты и поддержка</a> · <a href="/blog/agent-ili-bot-kvalifikaciya/">Агент или бот: кто квалифицирует заявку</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>Bitrix24 REST API — https://apidocs.bitrix24.ru/</li><li>amoCRM API — https://www.amocrm.ru/developers/</li><li>Telegram Bot API — https://core.telegram.org/bots/api</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>

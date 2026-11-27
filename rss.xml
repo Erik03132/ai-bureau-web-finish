@@ -7,6 +7,76 @@
 <language>ru-RU</language>
 <lastBuildDate>Fri, 27 Nov 2026 12:00:00 +0300</lastBuildDate>
 <item>
+<title>Аудит процессов: вопросы до старта</title>
+<link>https://ai-bureau.online/blog/audit-processa-voprosy/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/audit-processa-voprosy/</guid>
+<pubDate>Thu, 24 Dec 2026 00:00:00 +0000</pubDate>
+<description>Четыре вопроса, без которых план внедрения остаётся списком желаний: владелец процесса, метрика, данные, цена ошибки.</description>
+</item>
+<item>
+<title>Квалификация заявки: передача человеку</title>
+<link>https://ai-bureau.online/blog/kvalifikaciya-zayavki/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/kvalifikaciya-zayavki/</guid>
+<pubDate>Tue, 22 Dec 2026 00:00:00 +0000</pubDate>
+<description>Что агент решает сам, что передаёт менеджеру и какие поля заполняет до передачи. Правила эскалации и метрики качества.</description>
+</item>
+<item>
+<title>Ответ со ссылкой: доля валидных фрагментов</title>
+<link>https://ai-bureau.online/blog/otvet-so-ssylkoy/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/otvet-so-ssylkoy/</guid>
+<pubDate>Sun, 20 Dec 2026 00:00:00 +0000</pubDate>
+<description>Как измерить, действительно ли поиск по документам даёт ответ со ссылкой на нужный фрагмент. Метрика, порог и разбор ошибок.</description>
+</item>
+<item>
+<title>Ночные обращения: работа до смены</title>
+<link>https://ai-bureau.online/blog/nochnye-obrashcheniya/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/nochnye-obrashcheniya/</guid>
+<pubDate>Fri, 18 Dec 2026 00:00:00 +0000</pubDate>
+<description>Что бот закрывает ночью сам, что обязан отложить до утра и как не потерять заявку между сменами.</description>
+</item>
+<item>
+<title>Сверка реквизитов: ручная проверка</title>
+<link>https://ai-bureau.online/blog/sverka-rekvizitov/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/sverka-rekvizitov/</guid>
+<pubDate>Wed, 16 Dec 2026 00:00:00 +0000</pubDate>
+<description>Какие проверки реквизитов можно автоматизировать полностью, какие требуют человека и как считать долю ошибок.</description>
+</item>
+<item>
+<title>Локальная модель и контур по 152-ФЗ</title>
+<link>https://ai-bureau.online/blog/lokalnaya-model-152-fz/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/lokalnaya-model-152-fz/</guid>
+<pubDate>Sat, 12 Dec 2026 00:00:00 +0000</pubDate>
+<description>Чем внутренний контур отличается от изолированного, что именно требует 152-ФЗ и как выбрать железо под локальную модель.</description>
+</item>
+<item>
+<title>Инвентаризация источников: реестр</title>
+<link>https://ai-bureau.online/blog/inventarizaciya-istochnikov/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/inventarizaciya-istochnikov/</guid>
+<pubDate>Thu, 10 Dec 2026 00:00:00 +0000</pubDate>
+<description>Реестр источников данных перед RAG: владелец, формат, частота обновления, доступ и качество. Без него поиск отвечает устаревшими фактами.</description>
+</item>
+<item>
+<title>Агент или бот: кто квалифицирует заявку</title>
+<link>https://ai-bureau.online/blog/agent-ili-bot-kvalifikaciya/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/agent-ili-bot-kvalifikaciya/</guid>
+<pubDate>Tue, 08 Dec 2026 00:00:00 +0000</pubDate>
+<description>Короткая матрица выбора: когда достаточно чат-бота, когда нужен агент и во что обходится ошибка каждого варианта.</description>
+</item>
+<item>
+<title>Поиск по документам: ответ со ссылкой</title>
+<link>https://ai-bureau.online/blog/poisk-po-dokumentam/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/poisk-po-dokumentam/</guid>
+<pubDate>Sun, 06 Dec 2026 00:00:00 +0000</pubDate>
+<description>Как устроен поиск, который отвечает по документам и показывает страницу с фактом: гибридный поиск, реранкер, отказ от ответа.</description>
+</item>
+<item>
+<title>Сколько стоит ИИ-проект в 2026</title>
+<link>https://ai-bureau.online/blog/skolko-stoit-ii-proekt/</link>
+<guid isPermaLink="true">https://ai-bureau.online/blog/skolko-stoit-ii-proekt/</guid>
+<pubDate>Fri, 04 Dec 2026 00:00:00 +0000</pubDate>
+<description>Диапазоны бюджета по этапам, что двигает цену и какие расходы не попадают в смету подрядчика.</description>
+</item>
+<item>
 <title>AI-агент или чат-бот: в чём разница и что брать бизнесу</title>
 <link>https://ai-bureau.online/blog/ai-agent-ili-chat-bot/</link>
 <guid isPermaLink="true">https://ai-bureau.online/blog/ai-agent-ili-chat-bot/</guid>

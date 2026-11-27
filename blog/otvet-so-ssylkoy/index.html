@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ответ со ссылкой: доля валидных фрагментов — AI Bureau</title>
+<meta name="description" content="Как измерить, действительно ли поиск по документам даёт ответ со ссылкой на нужный фрагмент. Метрика, порог и разбор ошибок.">
+<link rel="canonical" href="https://ai-bureau.online/blog/otvet-so-ssylkoy/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/otvet-so-ssylkoy/">
+<meta property="og:title" content="Ответ со ссылкой: доля валидных фрагментов">
+<meta property="og:description" content="Как измерить, действительно ли поиск по документам даёт ответ со ссылкой на нужный фрагмент. Метрика, порог и разбор ошибок.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/otvet-so-ssylkoy/#article",
+"headline": "Ответ со ссылкой: доля валидных фрагментов",
+"description": "Как измерить, действительно ли поиск по документам даёт ответ со ссылкой на нужный фрагмент. Метрика, порог и разбор ошибок.",
+"datePublished": "2026-12-20",
+"dateModified": "2026-12-20",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/otvet-so-ssylkoy/"
+},
+"url": "https://ai-bureau.online/blog/otvet-so-ssylkoy/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/otvet-so-ssylkoy/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Можно ли считать метрику автоматически?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Частично. Совпадение страницы проверяется кодом, валидность абзаца — человеком. Автоматическая оценка «похожести» завышает результат на 10–15 пунктов."
+}
+},
+{
+"@type": "Question",
+"name": "Сколько документов нужно для пилота?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "От 200 до 2000 страниц достаточно, чтобы увидеть поведение. Меньше 50 страниц — это проверка демо, а не поиска."
+}
+},
+{
+"@type": "Question",
+"name": "Что если база обновляется каждый день?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Инкрементальная индексация занимает минуты. Важнее правило: кто отвечает за удаление устаревших версий."
+}
+},
+{
+"@type": "Question",
+"name": "Работает ли на сканах?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Да, после OCR. Качество распознавания таблиц и печатей — отдельная работа, её надо закладывать в срок."
+}
+},
+{
+"@type": "Question",
+"name": "Можно ли доверять ответу без проверки?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "На пилоте — нет. Задача первых недель — снизить время проверки, а не убрать её."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Ответ со ссылкой</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[03 / RAG]</span><h1>Ответ со ссылкой: доля валидных фрагментов</h1><p class="lede">«Ответ со ссылкой» звучит убедительно, пока не спросишь, куда ведёт ссылка. В половине пилотов она ведёт на документ, а не на абзац, и проверить ответ можно только чтением целиком. Мы считаем долю валидных фрагментов — это и есть честная метрика поиска.</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 20 декабря 2026 · 9 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Что считаем валидным фрагментом</h2>
+<p>Фрагмент валиден, если в нём содержится факт, на который опирается ответ, и он не требует соседних страниц для понимания. Ответ без ссылки, ссылка на файл целиком и ссылка на абзац, где факта нет, — три разные ошибки, и все три считаются промахом.</p>
+<table><thead><tr><th>Тип результата</th><th>Считаем</th><th>Пример</th></tr></thead><tbody><tr><td>Точный фрагмент</td><td>Попадание</td><td>Абзац договора с пунктом о сроках оплаты</td></tr><tr><td>Файл без страницы</td><td>Промах</td><td>Ссылка на PDF на 80 страниц</td></tr><tr><td>Фрагмент рядом</td><td>Промах</td><td>Соседний абзац с другим пунктом</td></tr><tr><td>Нет ответа</td><td>Отдельная категория</td><td>«В документах нет данных» — не промах</td></tr></tbody></table>
+<p>Четвёртая категория важнее, чем кажется. Система, которая признаёт отсутствие ответа, полезнее той, что всегда что-то находит. Первая экономит время проверки, вторая его тратит.</p>
+<h2>Как измерять</h2>
+<p>Нужен набор из 50–100 вопросов, составленный по реальным обращениям, а не по оглавлению базы. Для каждого вопроса заранее известен правильный фрагмент. Дальше — прогон и ручная разметка: попадание, рядом, файл, нет ответа.</p>
+<p>50 вопросов хватает, чтобы увидеть разницу между двумя конфигурациями. 300 нужно, чтобы заявлять процент с точностью до одного знака. На пилоте мы останавливаемся на 50 и не обещаем «95% точности».</p>
+<table><thead><tr><th>Метрика</th><th>Формула</th><th>Ориентир на пилоте</th></tr></thead><tbody><tr><td>Доля валидных фрагментов</td><td>Попадания / все вопросы</td><td>0,70–0,85</td></tr><tr><td>Доля отказов</td><td>«Нет ответа» / все</td><td>0,10–0,20</td></tr><tr><td>Полнота</td><td>Вопросы с ответом / вопросы с ответом в базе</td><td>0,85 и выше</td></tr><tr><td>Время до ответа</td><td>Медиана, секунды</td><td>Меньше 8</td></tr></tbody></table>
+<p class="callout">Порог релевантности 0,15 на нашей базе отсекает уверенные ответы по чужой теме. Порог — не константа: на другой коллекции его нужно подбирать заново.</p>
+<h2>Что двигает метрику</h2>
+<ol><li>Дробление на абзацы по смысловым границам, а не по 1000 символов.</li><li>Гибридный поиск: BM25 по терминам плюс вектор по смыслу. Один вектор теряет артикулы и номера пунктов.</li><li>Реранкер на топ-20 кандидатов. Даёт 5–10 процентных пунктов там, где формулировки не совпадают.</li><li>Метаданные: дата, тип документа, срок действия. Просроченный договор не должен выигрывать у действующего.</li></ol>
+<p>Отдельно — чистота базы. Двадцать версий одного регламента дают стабильно неверный ответ, и никакой реранкер это не исправит. Перед пилотом мы убираем дубли и помечаем устаревшие версии.</p>
+<h2>Как выглядит разбор ошибки</h2>
+<p>На каждый промах — одна строка: вопрос, найденный фрагмент, правильный фрагмент, причина. Причины повторяются: вопрос сформулирован на языке клиента, а документ — на языке юриста; факт размазан по двум абзацам; таблица развалилась при извлечении.</p>
+<p>Через 50 разборов видно, что чинить: извлечение, дробление или формулировки. Это дешевле, чем менять модель третий раз подряд.</p>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Можно ли считать метрику автоматически?</dt><dd>Частично. Совпадение страницы проверяется кодом, валидность абзаца — человеком. Автоматическая оценка «похожести» завышает результат на 10–15 пунктов.</dd><dt>Сколько документов нужно для пилота?</dt><dd>От 200 до 2000 страниц достаточно, чтобы увидеть поведение. Меньше 50 страниц — это проверка демо, а не поиска.</dd><dt>Что если база обновляется каждый день?</dt><dd>Инкрементальная индексация занимает минуты. Важнее правило: кто отвечает за удаление устаревших версий.</dd><dt>Работает ли на сканах?</dt><dd>Да, после OCR. Качество распознавания таблиц и печатей — отдельная работа, её надо закладывать в срок.</dd><dt>Можно ли доверять ответу без проверки?</dt><dd>На пилоте — нет. Задача первых недель — снизить время проверки, а не убрать её.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/rag/">Поиск и ответы по данным</a> · <a href="/services/document-automation/">Автоматизация документооборота</a> · <a href="/blog/poisk-po-dokumentam/">Поиск по документам: ответ со ссылкой</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>Qdrant, документация — https://qdrant.tech/documentation/</li><li>Reciprocal Rank Fusion, оригинальная работа — https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf</li><li>BM25, обзор Okapi — https://en.wikipedia.org/wiki/Okapi_BM25</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Локальная модель и контур по 152-ФЗ — AI Bureau</title>
+<meta name="description" content="Чем внутренний контур отличается от изолированного, что именно требует 152-ФЗ и как выбрать железо под локальную модель.">
+<link rel="canonical" href="https://ai-bureau.online/blog/lokalnaya-model-152-fz/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bureau.online/blog/lokalnaya-model-152-fz/">
+<meta property="og:title" content="Локальная модель и контур по 152-ФЗ">
+<meta property="og:description" content="Чем внутренний контур отличается от изолированного, что именно требует 152-ФЗ и как выбрать железо под локальную модель.">
+<meta property="og:site_name" content="AI Bureau">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+[
+{
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"@id": "https://ai-bureau.online/blog/lokalnaya-model-152-fz/#article",
+"headline": "Локальная модель и контур по 152-ФЗ",
+"description": "Чем внутренний контур отличается от изолированного, что именно требует 152-ФЗ и как выбрать железо под локальную модель.",
+"datePublished": "2026-12-12",
+"dateModified": "2026-12-12",
+"inLanguage": "ru-RU",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://ai-bureau.online/blog/lokalnaya-model-152-fz/"
+},
+"url": "https://ai-bureau.online/blog/lokalnaya-model-152-fz/",
+"author": {
+"@type": "Person",
+"@id": "https://ai-bureau.online/author/#person",
+"name": "Игорь Васин",
+"jobTitle": "маркетолог и инженер AI-агентов",
+"url": "https://ai-bureau.online/author/"
+},
+"publisher": {
+"@type": "Organization",
+"name": "AI Bureau",
+"url": "https://ai-bureau.online/"
+}
+},
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"@id": "https://ai-bureau.online/blog/lokalnaya-model-152-fz/#faq",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Достаточно ли локальной модели, чтобы соблюсти 152-ФЗ?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Нет. Нужны правовые основания, цели, сроки хранения и разграничение доступа. Модель в контуре закрывает только техническую часть — место хранения и отсутствие внешней передачи."
+}
+},
+{
+"@type": "Question",
+"name": "Можно ли работать без GPU?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Можно на CPU, но скорость падает в 5–10 раз. Для пакетной обработки документов ночью это приемлемо, для чата — нет."
+}
+},
+{
+"@type": "Question",
+"name": "Что выбрать: Ollama или vLLM?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Ollama — для пилота и небольших нагрузок, проще в обслуживании. vLLM — когда нужна пропускная способность и параллельные запросы."
+}
+},
+{
+"@type": "Question",
+"name": "Нужен ли интернет для обновлений?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Для изолированного контура — нет. Обновления ставятся вручную, с проверкой контрольных сумм и записью в журнал изменений."
+}
+},
+{
+"@type": "Question",
+"name": "Кто отвечает за галлюцинации?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Компания, которая использует систему. Поэтому в интерфейсе нужны ссылки на источник и явный отказ, когда данных нет."
+}
+}
+]
+}
+]
+</script>
+<style>
+:root{--ink:#23211F;--sand:#F3EFE7;--terra:#B95433;--line:#D9D2C6;--muted:#6B6359;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}a:focus-visible{outline:2px solid var(--terra);outline-offset:3px}.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+.mono{font:600 11px/1.4 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--terra)}
+header{border-bottom:1px solid var(--line);background:#EFE9DE}nav{padding:18px 0;font-size:14px}nav a{text-decoration:none;margin-right:20px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.03em;margin:14px 0 22px}
+h2{font-size:26px;line-height:1.25;font-weight:500;margin:44px 0 14px}.lede{font-size:20px;max-width:64ch;color:#3D3833}.hero{padding:44px 0 30px}
+.byline{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-size:14px}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover}.byline a{text-decoration-color:var(--terra)}
+article{padding-bottom:48px}table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;background:#FAF7F1;border-radius:var(--r);overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:12px 14px;text-align:left;vertical-align:top}th{font:600 12px/1.4 "JetBrains Mono",monospace;text-transform:uppercase;color:var(--muted)}
+dt{font-weight:600;margin-top:14px}dd{margin:6px 0 0;color:#3D3833}.callout{border-left:3px solid var(--terra);padding:4px 0 4px 18px;margin:26px 0}
+.related,.sources{background:#FAF7F1;border:1px solid var(--line);border-radius:var(--r);padding:22px;margin:34px 0}
+.related h2,.sources h2{margin:0 0 10px;font-size:20px}.sources li{font-size:14px;word-break:break-word}
+.foot{border-top:1px solid var(--line);padding:24px 0;font-size:14px;color:var(--muted)}
+</style>
+<style>html{overflow-wrap:break-word;word-wrap:break-word}</style></head>
+<body>
+<header><div class="wrap"><nav aria-label="Хлебные крошки"><a href="/">Главная</a><a href="/blog/">Блог</a><span aria-current="page">Локальная модель и 152-ФЗ</span></nav></div></header>
+<main>
+<div class="wrap hero"><span class="mono">[06 / ПРИВАТНЫЕ LLM]</span><h1>Локальная модель и контур по 152-ФЗ</h1><p class="lede">Локальная модель — это не «ИИ без интернета». Это модель, которая работает на вашем железе и внутри вашего периметра доступа. Разница между внутренним контуром и полностью изолированным вариантом — в двух вопросах: есть ли исходящий трафик и кто имеет доступ к журналам.</p></div>
+<div class="wrap"><div class="byline"><img src="/author/igor-vasin@2x.jpg" alt="Игорь Васин" width="48" height="48"><div><a href="/author/">Игорь Васин</a><br><span class="meta">маркетолог и инженер AI-агентов · 12 декабря 2026 · 6 мин</span></div></div></div>
+<div class="wrap"><article>
+<h2>Три варианта размещения</h2>
+<table><thead><tr><th>Вариант</th><th>Где данные</th><th>Исходящий трафик</th><th>Когда подходит</th></tr></thead><tbody><tr><td>Облачный API</td><td>У провайдера</td><td>Есть</td><td>Публичные данные, быстрый старт</td></tr><tr><td>Внутренний контур</td><td>На ваших серверах</td><td>Только к своим сервисам</td><td>Клиентские данные, есть админ</td></tr><tr><td>Изолированный контур</td><td>На ваших серверах</td><td>Нет</td><td>Госданные, КТ, закрытые проекты</td></tr></tbody></table>
+<p>Внутренний контур — рабочий вариант для большинства компаний. Модель, векторная база и журналы стоят в вашей сети, наружу уходят только обновления и метрики, и то по согласованию.</p>
+<h2>Что именно требует 152-ФЗ</h2>
+<p>Закон требует локализации базы данных с персональными данными на территории России, правовых оснований обработки, ограничения целей и разграничения доступа. Он не требует отключать интернет и не запрещает использование моделей. Требования касаются данных, а не инструмента.</p>
+<ul><li>Запишите цели обработки до запуска: какие данные, зачем, сколько храним.</li><li>Определите оператора и ответственного за обработку.</li><li>Разграничьте доступ: кто видит диалоги, кто видит журналы запросов.</li><li>Обезличивайте там, где полные данные не нужны для ответа.</li><li>Храните данные в контуре на территории России.</li></ul>
+<p class="callout">«Локальная модель» не отменяет согласие на обработку и не заменяет политику. Это техническая мера, а не юридическая.</p>
+<h2>Железо и скорость</h2>
+<p>Для модели 8–14 миллиардов параметров в квантованном формате хватает одного сервера с GPU на 24 ГБ памяти. Скорость — 20–40 токенов в секунду, этого достаточно для чата и извлечения полей. Модели на 70 миллиардов требуют двух карт или заметно более медленного варианта на CPU.</p>
+<table><thead><tr><th>Класс модели</th><th>Память</th><th>Скорость</th><th>Задачи</th></tr></thead><tbody><tr><td>7–8B, Q4</td><td>8–12 ГБ</td><td>40–80 токенов/с</td><td>Классификация, извлечение полей</td></tr><tr><td>14B, Q4</td><td>16–24 ГБ</td><td>20–40 токенов/с</td><td>Чат по документам, суммаризация</td></tr><tr><td>32B, Q4</td><td>24–48 ГБ</td><td>10–20 токенов/с</td><td>Сложные ответы, анализ договоров</td></tr><tr><td>70B, Q4</td><td>48–80 ГБ</td><td>5–12 токенов/с</td><td>Когда качество важнее скорости</td></tr></tbody></table>
+<p>Квантование Q4 снижает качество незначительно на извлечении полей и заметнее — на длинных рассуждениях. Проверять нужно на своих документах, а не по таблицам из интернета.</p>
+<h2>Экономика</h2>
+<p>Сервер с одной картой на 24 ГБ стоит порядка 400–700 тысяч рублей, аренда — 25–60 тысяч в месяц. Это окупается при объёме от 3–5 миллионов токенов в месяц или при жёстком требовании не выносить данные. Для малых объёмов облачный API дешевле, и притворяться иначе не стоит.</p>
+<p>Скрытая статья расходов — поддержка. Обновление модели, мониторинг памяти, резервные копии журналов. Это 2–4 часа инженера в неделю, их нужно закладывать сразу.</p>
+<h2>Где локальная модель проигрывает</h2>
+<p>Длинный контекст и сложные многошаговые задачи: облачные модели на 200+ тысяч токенов пока сильнее. Если у вас 400-страничный договор и вопрос «найди все риски», локальный вариант на 14B даст поверхностный ответ.</p>
+<p>Второе — качество на редких языках и специальных терминах. Модель нужно дообучать или хотя бы подбирать под домен, иначе она уверенно пишет общие фразы.</p>
+<h2>Вопросы и ответы</h2>
+<dl id="faq"><dt>Достаточно ли локальной модели, чтобы соблюсти 152-ФЗ?</dt><dd>Нет. Нужны правовые основания, цели, сроки хранения и разграничение доступа. Модель в контуре закрывает только техническую часть — место хранения и отсутствие внешней передачи.</dd><dt>Можно ли работать без GPU?</dt><dd>Можно на CPU, но скорость падает в 5–10 раз. Для пакетной обработки документов ночью это приемлемо, для чата — нет.</dd><dt>Что выбрать: Ollama или vLLM?</dt><dd>Ollama — для пилота и небольших нагрузок, проще в обслуживании. vLLM — когда нужна пропускная способность и параллельные запросы.</dd><dt>Нужен ли интернет для обновлений?</dt><dd>Для изолированного контура — нет. Обновления ставятся вручную, с проверкой контрольных сумм и записью в журнал изменений.</dd><dt>Кто отвечает за галлюцинации?</dt><dd>Компания, которая использует систему. Поэтому в интерфейсе нужны ссылки на источник и явный отказ, когда данных нет.</dd></dl>
+<div class="related"><h2>Услуги по теме</h2><p><a href="/services/private-models/">Локальные модели в контуре</a> · <a href="/services/rag/">Поиск и ответы по данным</a> · <a href="/blog/poisk-po-dokumentam/">Поиск по документам: ответ со ссылкой</a></p></div>
+<h2>Следующий шаг</h2>
+<p>Опишите один процесс, где сейчас человек копирует данные вручную. Мы разберём его и покажем, где нужен агент, а где достаточно формы. Разбор одного процесса — без обещаний и без процентов.</p>
+<div class="sources"><h2>Первоисточники</h2><ul><li>152-ФЗ «О персональных данных» — https://www.consultant.ru/document/cons_doc_LAW_61801/</li><li>Роскомнадзор, разъяснения по локализации — https://pd.rkn.gov.ru/</li><li>Ollama, документация — https://docs.ollama.com/</li><li>vLLM, документация — https://docs.vllm.ai/</li></ul><p class="meta">Ссылки проверены 28.11.2026.</p></div>
+</article></div>
+</main>
+<footer class="foot"><div class="wrap">AI Bureau · <a href="/author/">Автор</a> · <a href="/rss.xml">RSS</a></div></footer>
+</body>
+</html>
